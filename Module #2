@@ -1,0 +1,5 @@
+assignment2 <- c(16, 18, 14, 22, 27, 17, 19, 17, 17, 22, 20, 22)
+myMean <- function(assignment2) { return(sum(assignment)/length(someData)) }
+the code given doesn’t work as written, it gives an object ‘assignment’ not found error. If we want to find the mean of the dataset passed to the function as an argument, then the names of the variables in the function body should match the function’s argument, because neither assignment nor someData have been given values.
+The function works if written as :
+myMean <- function(assignment2) { return(sum(assignment2)/length(assignment2)) }
