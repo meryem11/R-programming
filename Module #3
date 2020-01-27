@@ -1,0 +1,18 @@
+> Name <- c("Jeb", “Donald”, "Ted”, “Marco” “Carly”, “Hillary”, “Berine”)
+> ABC political poll results <- c(4, 62 51, 21, 2, 14, 15)
+> CBS political poll results <- c(12, 75, 43, 19, 1, 21, 19) 
+
+First, I want to note that There is no comma in between “Marco” and “Carly” and between 62 and 51.
+RStudio doesn’t like the spaces. So, to input this, I added the commas and I changed the names (ABC political poll results and CBS political poll results) to ABC_political_poll_results and CBS_political_poll_results. 
+> Name <- c("Jeb", “Donald”, "Ted”, “Marco” , “Carly”, “Hillary”, “Berine”)
+> ABC_political_poll_results <- c(4, 62, 51, 21, 2, 14, 15)
+> CBS_political_poll_results <- c(12, 75, 43, 19, 1, 21, 19) 
+I tried turning that into a matrix using cbind
+candidates <- cbind(Name, ABC_political_poll_results, CBS_political_poll_results)
+Here is the data frame for this data set which looks the same as the matrix:
+
+candidates.df<- data.frame(Name, ABC_political_poll_results, CBS_political_poll_results)
+mean(candidates.df)
+ After I run the mean command on the data frame, I got an error message.
+To get the means, I had to use colMeans on the numeric columns which are 2 and 3.
+colMeans(candidates.df[2:3])
