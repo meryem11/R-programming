@@ -1,0 +1,21 @@
+Frequency <- c(0.6, 0.3, 0.4, 0.4, 0.2, 0.6, 0.3, 0.4, 0.9, 0.2)
+BP <- c(103, 87, 32, 42, 59, 109, 78, 205, 135, 176)
+First <- c(1, 1, 1, 1, 0, 0, 0, 0, NA, 1)
+Second <- c(0, 0, 1, 1, 0, 0, 1, 1, 1, 1)
+FinalDecision <- c(0, 1, 0, 1, 0, 1, 0, 1, 1, 1)
+df<- data.frame(Frequency, BP, First, Second, FinalDecision)
+df
+
+boxplot(BP~First,col=rainbow(3))
+boxplot(BP~Second,col=rainbow(9))
+boxplot(BP~FinalDecision,col=rainbow(6))
+
+# The first decision of the doctors differs from the last decision.
+# A final decision of no is observed  at lower blood pressures 
+# and a final decision of yes for higher blood pressure
+
+hist(df$BP[df$FinalDecision==0],col="pink")
+hist(df$BP[df$FinalDecision==1],col="lightblue")
+
+# The first histogram shows that a high frequency of No as the final decision is observed in those with low blood pressure. 
+# The second histogram shows a high frequency of Yes for those with high blood pressure in the range of 100 to 150.
