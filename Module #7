@@ -1,0 +1,11 @@
+# S3
+
+ s3 <- list(name = "Clara", age = 19, GPA = 3.8)
+ class(s3) <- "student"
+ s3
+
+ # S4
+ 
+ setClass("student", slots=list(name="character", age="numeric", GPA="numeric"))
+ s4 <- new("student",name="Clara", age=19, GPA=3.8)
+ s4
