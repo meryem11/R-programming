@@ -1,0 +1,24 @@
+library(plyr)
+
+# Step#1 Import Data-set to R
+
+Student <- read.table("Assignment 6 Dataset-1 (1).txt",header=T,sep=",")
+Student
+
+# Create an altered list sorted on sex, with separate Grade means 
+
+StudentAverage <- ddply(Student, "Sex", transform, Grade.Average=mean(Grade))
+StudentAverage
+
+# Write the new data set to a file
+
+write.table(StudentAverage, "StudentAverage")
+
+# Step#2 Convert the data set to a dataframe for names whos' name contains the letter i
+
+i_students <- subset(Student, grepl("i", Student$Name, ignore.case=T))
+i_students
+
+# Step#3 Write the filtered data set and convert it to CSV file
+
+write.table(i_students, "DataSet.csv", sep=",")
