@@ -1,0 +1,20 @@
+terrorism <- read_csv("terrorism.csv")
+
+#1. Basic Graphic in R
+
+plot(terrorism$year,terrorism$incidents,main = "Us terrorism incidents from 1970 to 2015",
+     xlab="Time", ylab="Incidents")
+lines(terrorism$year,terrorism$incidents, col="purple")
+
+#2. Lattice package 
+
+library(lattice)
+xyplot(incidents~year,terrorism,
+       grid=T,
+       scales = list(x = list(log = 10, equispaced.log = FALSE)),
+       type = c("p", "smooth"), col.line = "darkorange", lwd = 3)
+
+#3. ggplot2 package
+
+ggplot(terrorism,aes(x=terrorism$year,y=terrorism$incidents))+geom_line(col="red")+ 
+  labs(title="Us terrorism incidents from 1970 to 2015", x="Year", y="Incidents")
