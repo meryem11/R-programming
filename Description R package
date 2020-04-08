@@ -1,0 +1,11 @@
+Package: Myfirstpackage
+Type: Package
+Title: Fahrenheit to Celsius conversion
+Version: 0.1.0
+Author: Meryem El Rhazouani
+Maintainer: Meryem El Rhazouani <meryemkhair@gmail.com>
+Description: The package has one function that converts temperature from Fahrenheit to Celsius.
+License: CCO
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.0
