@@ -1,0 +1,42 @@
+---
+title: "My First Markdown Document"
+author: "Meryem El Rhazouani"
+date: "4/13/2020"
+output: html_document
+---
+
+This is my first Markdown Document.
+
+Let's load some data.
+
+```{r}
+library(datasets)
+library(ggplot2)
+data(mtcars)
+summary(mtcars)
+```
+
+Here is a visualisation of mtcars data set.
+```{r}
+car.names<- rownames(mtcars)
+g<- ggplot(mtcars, aes(x=car.names, y = mpg)) + geom_bar(stat = "identity",fill= "lightpink")
+g<- g + theme(axis.text.x = element_text(angle = 90, hjust = 1))
+g
+```
+
+ • This plot was generated using datasets pre-loaded into R studio
+
+
+Here is an unordered list
+
+ • Here is item one
+  
+ •  Item two
+  
+Here is an ordered list
+
+ 1. first item
+ 
+ 2. second item
+  
+
